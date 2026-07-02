@@ -38,6 +38,7 @@ jobs:
             3.11
             3.12
             3.13
+            3.14
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
@@ -45,7 +46,7 @@ jobs:
         uses: PyO3/maturin-action@v1
         with:
           target: ${{ matrix.target }}
-          args: --release --out dist --interpreter 3.11 3.12 3.13
+          args: --release --out dist --interpreter 3.11 3.12 3.13 3.14
       - uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.target }}
